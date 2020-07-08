@@ -3,7 +3,7 @@
     <!-- Sidebar - Brand -->
     <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
         <div class="sidebar-brand-icon">
-            <i class="fas fa-laugh-wink"></i>
+            <i class="far fa-laugh-wink"></i>
         </div>
         <div class="sidebar-brand-text mx-3">Library</div>
     </a>
@@ -14,7 +14,7 @@
     <!-- Nav Item - Dashboard -->
     <li class="nav-item active">
         <a class="nav-link" href="{{ route('admin.home') }}">
-            <i class="fas fa-fw fa-tachometer-alt"></i>
+            <i class="far fa-fw fa-tachometer-alt"></i>
             <span>Dashboard</span></a>
     </li>
 
@@ -29,14 +29,14 @@
     <!-- Nav Item - Books -->
     <li class="nav-item">
         <a class="nav-link" href="{{ route('admin.books') }}">
-            <i class="fas fa-fw fa-table"></i>
+            <i class="far fa-fw fa-book"></i>
             <span>Books</span></a>
     </li>
 
     <!-- Nav Item - Authors -->
     <li class="nav-item">
         <a class="nav-link" href="{{ route('admin.authors') }}">
-            <i class="fas fa-fw fa-table"></i>
+            <i class="far fa-fw fa-user-friends"></i>
             <span>Authors</span></a>
     </li>
 

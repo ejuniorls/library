@@ -10,14 +10,24 @@
     <!-- Page Heading -->
     <div class="d-sm-flex align-items-center justify-content-between mb-4">
         <h1 class="h3 mb-0 text-gray-800">Books</h1>
-        <a href="#" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i
-                class="fas fa-download fa-sm text-white-50"></i> Generate Report</a>
+
+        <nav aria-label="breadcrumbd">
+            <ol class="breadcrumb d-none d-lg-block w-100">
+                <li class="breadcrumb-item"><a href="#">Home</a></li>
+                <li class="breadcrumb-item active" aria-current="page">Books</li>
+            </ol>
+        </nav>
+    </div>
+
+    <div class="d-sm-flex align-items-center justify-content-between mb-4">
+        <a href="#" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm" data-toggle="modal"
+            data-target="#newModal"><i class="far fa-fw fa-plus fa-sm text-white-50"></i> New Entry</a>
     </div>
 
     <!-- Content Row -->
     <div class="row">
 
-        <div class="col-lg-3 order-0">
+        <div class="col-lg-3 order-2">
 
             <!-- Basic Card Example -->
             <div class="card shadow mb-4">
@@ -47,11 +57,20 @@
                         </a>
                         <div class="dropdown-menu dropdown-menu-right shadow animated--fade-in"
                             aria-labelledby="dropdownMenuLink">
-                            <div class="dropdown-header">Dropdown Header:</div>
-                            <a class="dropdown-item" href="#">Action</a>
-                            <a class="dropdown-item" href="#">Another action</a>
+                            <div class="dropdown-header">Select Action:</div>
+                            <a class="dropdown-item" href="#">
+                                <i class="far fa-copy fa-fw mr-2 text-gray-500"></i>
+                                Copy</a>
+                            <a class="dropdown-item" href="#">
+                                <i class="far fa-file-pdf fa-fw mr-2 text-gray-500"></i>
+                                Export as PDF</a>
+                            <a class="dropdown-item" href="#">
+                                <i class="far fa-file-excel fa-fw mr-2 text-gray-500"></i>
+                                Export as Excel</a>
                             <div class="dropdown-divider"></div>
-                            <a class="dropdown-item" href="#">Something else here</a>
+                            <a class="dropdown-item" href="#" data-toggle="modal" data-target="#deleteModal">
+                                <i class="far fa-trash-alt fa-fw mr-2 text-gray-500"></i>
+                                Delete</a>
                         </div>
                     </div>
                 </div>
@@ -101,9 +120,9 @@
                                                     colspan="1" style="width: 69.1667px;"
                                                     aria-label="Start date: activate to sort column ascending">Start
                                                     date</th>
-                                                <th class="sorting" tabindex="0" aria-controls="dataTable" rowspan="1"
-                                                    colspan="1" style="width: 66.1333px;"
-                                                    aria-label="Salary: activate to sort column ascending">Salary</th>
+                                                <th class="text-center" tabindex="0" aria-controls="dataTable"
+                                                    rowspan="1" colspan="1" style="width: 100px;"
+                                                    aria-label="Salary: activate to sort column ascending">Actions</th>
                                             </tr>
                                         </thead>
                                         <tfoot>
@@ -113,7 +132,7 @@
                                                 <th rowspan="1" colspan="1">Office</th>
                                                 <th rowspan="1" colspan="1">Age</th>
                                                 <th rowspan="1" colspan="1">Start date</th>
-                                                <th rowspan="1" colspan="1">Salary</th>
+                                                <th rowspan="1" colspan="1" class="text-center">Actions</th>
                                             </tr>
                                         </tfoot>
                                         <tbody>
@@ -123,23 +142,191 @@
                                                 <td>Tokyo</td>
                                                 <td>33</td>
                                                 <td>2008/11/28</td>
-                                                <td>$162,700</td>
-                                            </tr>
-                                            <tr role="row" class="even">
-                                                <td class="sorting_1">Angelica Ramos</td>
-                                                <td>Chief Executive Officer (CEO)</td>
-                                                <td>London</td>
-                                                <td>47</td>
-                                                <td>2009/10/09</td>
-                                                <td>$1,200,000</td>
+                                                <td class="text-center">
+                                                    <div class="dropdown show no-arrow d-inline-block">
+                                                        <a class="btn btn-sm btn-primary dropdown-toggle no-arrow"
+                                                            href="#" role="button" id="dropdownMenuLink"
+                                                            data-toggle="dropdown" aria-haspopup="true"
+                                                            aria-expanded="false">
+                                                            <i class="far fa-bars"></i>
+                                                        </a>
+
+                                                        <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                                                            <div class="dropdown-header">Select Action:</div>
+                                                            <a class="dropdown-item" href="#">
+                                                                <i class="far fa-copy fa-fw mr-2 text-gray-500"></i>
+                                                                Copy</a>
+                                                            <a class="dropdown-item" href="#">
+                                                                <i class="far fa-file-pdf fa-fw mr-2 text-gray-500"></i>
+                                                                Save as PDF</a>
+                                                            <div class="dropdown-divider"></div>
+                                                            <a class="dropdown-item" href="#">
+                                                                <i class="far fa-eye fa-fw mr-2 text-gray-500"></i>
+                                                                View</a>
+                                                            <a class="dropdown-item d-xl-none" href="#"
+                                                                data-toggle="modal" data-target="#editModal">
+                                                                <i class="far fa-edit fa-fw mr-2 text-gray-500"></i>
+                                                                Edit</a>
+                                                            <a class="dropdown-item d-xl-none" href="#"
+                                                                data-toggle="modal" data-target="#deleteModal">
+                                                                <i
+                                                                    class="far fa-trash-alt fa-fw mr-2 text-gray-500"></i>
+                                                                Delete</a>
+                                                        </div>
+                                                    </div>
+
+                                                    <a class="btn btn-sm btn-primary d-none d-xl-inline-block" href=""
+                                                        role="button" data-toggle="modal" data-target="#editModal"><i
+                                                            class="far fa-edit"></i></a>
+
+                                                    <a class="btn btn-sm btn-primary d-none d-xl-inline-block" href=""
+                                                        role="button" data-toggle="modal" data-target="#deleteModal"><i
+                                                            class="far fa-trash-alt"></i></a>
+                                                </td>
                                             </tr>
                                             <tr role="row" class="odd">
-                                                <td class="sorting_1">Ashton Cox</td>
-                                                <td>Junior Technical Author</td>
-                                                <td>San Francisco</td>
-                                                <td>66</td>
-                                                <td>2009/01/12</td>
-                                                <td>$86,000</td>
+                                                <td class="sorting_1">Airi Satou</td>
+                                                <td>Accountant</td>
+                                                <td>Tokyo</td>
+                                                <td>33</td>
+                                                <td>2008/11/28</td>
+                                                <td class="text-center">
+                                                    <div class="dropdown show no-arrow d-inline-block">
+                                                        <a class="btn btn-sm btn-primary dropdown-toggle no-arrow"
+                                                            href="#" role="button" id="dropdownMenuLink"
+                                                            data-toggle="dropdown" aria-haspopup="true"
+                                                            aria-expanded="false">
+                                                            <i class="far fa-bars"></i>
+                                                        </a>
+
+                                                        <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                                                            <div class="dropdown-header">Select Action:</div>
+                                                            <a class="dropdown-item" href="#">
+                                                                <i class="far fa-copy fa-fw mr-2 text-gray-500"></i>
+                                                                Copy</a>
+                                                            <a class="dropdown-item" href="#">
+                                                                <i class="far fa-file-pdf fa-fw mr-2 text-gray-500"></i>
+                                                                Save as PDF</a>
+                                                            <div class="dropdown-divider"></div>
+                                                            <a class="dropdown-item" href="#">
+                                                                <i class="far fa-eye fa-fw mr-2 text-gray-500"></i>
+                                                                View</a>
+                                                            <a class="dropdown-item d-lg-none d-xl-none" href="#"
+                                                                data-toggle="modal" data-target="#editModal">
+                                                                <i class="far fa-edit fa-fw mr-2 text-gray-500"></i>
+                                                                Edit</a>
+                                                            <a class="dropdown-item d-lg-none d-xl-none" href="#"
+                                                                data-toggle="modal" data-target="#deleteModal">
+                                                                <i
+                                                                    class="far fa-trash-alt fa-fw mr-2 text-gray-500"></i>
+                                                                Delete</a>
+                                                        </div>
+                                                    </div>
+
+                                                    <a class="btn btn-sm btn-primary d-none d-xl-inline-block" href=""
+                                                        role="button" data-toggle="modal" data-target="#editModal"><i
+                                                            class="far fa-edit"></i></a>
+
+                                                    <a class="btn btn-sm btn-primary d-none d-xl-inline-block" href=""
+                                                        role="button" data-toggle="modal" data-target="#deleteModal"><i
+                                                            class="far fa-trash-alt"></i></a>
+                                                </td>
+                                            </tr>
+                                            <tr role="row" class="odd">
+                                                <td class="sorting_1">Airi Satou</td>
+                                                <td>Accountant</td>
+                                                <td>Tokyo</td>
+                                                <td>33</td>
+                                                <td>2008/11/28</td>
+                                                <td class="text-center">
+                                                    <div class="dropdown show no-arrow d-inline-block">
+                                                        <a class="btn btn-sm btn-primary dropdown-toggle no-arrow"
+                                                            href="#" role="button" id="dropdownMenuLink"
+                                                            data-toggle="dropdown" aria-haspopup="true"
+                                                            aria-expanded="false">
+                                                            <i class="far fa-bars"></i>
+                                                        </a>
+
+                                                        <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                                                            <div class="dropdown-header">Select Action:</div>
+                                                            <a class="dropdown-item" href="#">
+                                                                <i class="far fa-copy fa-fw mr-2 text-gray-500"></i>
+                                                                Copy</a>
+                                                            <a class="dropdown-item" href="#">
+                                                                <i class="far fa-file-pdf fa-fw mr-2 text-gray-500"></i>
+                                                                Save as PDF</a>
+                                                            <div class="dropdown-divider"></div>
+                                                            <a class="dropdown-item" href="#">
+                                                                <i class="far fa-eye fa-fw mr-2 text-gray-500"></i>
+                                                                View</a>
+                                                            <a class="dropdown-item d-lg-none d-xl-none" href="#"
+                                                                data-toggle="modal" data-target="#editModal">
+                                                                <i class="far fa-edit fa-fw mr-2 text-gray-500"></i>
+                                                                Edit</a>
+                                                            <a class="dropdown-item d-lg-none d-xl-none" href="#"
+                                                                data-toggle="modal" data-target="#deleteModal">
+                                                                <i
+                                                                    class="far fa-trash-alt fa-fw mr-2 text-gray-500"></i>
+                                                                Delete</a>
+                                                        </div>
+                                                    </div>
+
+                                                    <a class="btn btn-sm btn-primary d-none d-xl-inline-block" href=""
+                                                        role="button" data-toggle="modal" data-target="#editModal"><i
+                                                            class="far fa-edit"></i></a>
+
+                                                    <a class="btn btn-sm btn-primary d-none d-xl-inline-block" href=""
+                                                        role="button" data-toggle="modal" data-target="#deleteModal"><i
+                                                            class="far fa-trash-alt"></i></a>
+                                                </td>
+                                            </tr>
+                                            <tr role="row" class="odd">
+                                                <td class="sorting_1">Airi Satou</td>
+                                                <td>Accountant</td>
+                                                <td>Tokyo</td>
+                                                <td>33</td>
+                                                <td>2008/11/28</td>
+                                                <td class="text-center">
+                                                    <div class="dropdown show no-arrow d-inline-block">
+                                                        <a class="btn btn-sm btn-primary dropdown-toggle no-arrow"
+                                                            href="#" role="button" id="dropdownMenuLink"
+                                                            data-toggle="dropdown" aria-haspopup="true"
+                                                            aria-expanded="false">
+                                                            <i class="far fa-bars"></i>
+                                                        </a>
+
+                                                        <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                                                            <div class="dropdown-header">Select Action:</div>
+                                                            <a class="dropdown-item" href="#">
+                                                                <i class="far fa-copy fa-fw mr-2 text-gray-500"></i>
+                                                                Copy</a>
+                                                            <a class="dropdown-item" href="#">
+                                                                <i class="far fa-file-pdf fa-fw mr-2 text-gray-500"></i>
+                                                                Save as PDF</a>
+                                                            <div class="dropdown-divider"></div>
+                                                            <a class="dropdown-item" href="#">
+                                                                <i class="far fa-eye fa-fw mr-2 text-gray-500"></i>
+                                                                View</a>
+                                                            <a class="dropdown-item d-lg-none d-xl-none" href="#"
+                                                                data-toggle="modal" data-target="#editModal">
+                                                                <i class="far fa-edit fa-fw mr-2 text-gray-500"></i>
+                                                                Edit</a>
+                                                            <a class="dropdown-item d-lg-none d-xl-none" href="#"
+                                                                data-toggle="modal" data-target="#deleteModal">
+                                                                <i
+                                                                    class="far fa-trash-alt fa-fw mr-2 text-gray-500"></i>
+                                                                Delete</a>
+                                                        </div>
+                                                    </div>
+
+                                                    <a class="btn btn-sm btn-primary d-none d-xl-inline-block" href=""
+                                                        role="button" data-toggle="modal" data-target="#editModal"><i
+                                                            class="far fa-edit"></i></a>
+
+                                                    <a class="btn btn-sm btn-primary d-none d-xl-inline-block" href=""
+                                                        role="button" data-toggle="modal" data-target="#deleteModal"><i
+                                                            class="far fa-trash-alt"></i></a>
+                                                </td>
                                             </tr>
                                         </tbody>
                                     </table>
@@ -187,5 +374,9 @@
 
 </div>
 <!-- End of Page Content -->
+
+<!-- Modal -->
+@include('admin.books.modal')
+<!-- End of Modal -->
 
 @endsection
