@@ -15,11 +15,11 @@
 </div>
 
 <div class="form-row">
-    <div class="form-group col-md-6">
+    <div class="form-group col-md-4">
         <label for="inputBirth">Birth</label>
         <input type="text" class="form-control" id="inputBirth" placeholder="Birth">
     </div>
-    <div class="form-group col-md-6">
+    <div class="form-group col-md-4">
         <label for="inputDeath">Death</label>
         <input type="text" class="form-control" id="inputDeath" placeholder="Death">
         <div class="form-check align-middle">
@@ -28,6 +28,15 @@
                 Not aplicable
             </label>
         </div>
+    </div>
+    <div class="form-group col-md-4">
+        <label for="genderSelect">Gender</label>
+        <select class="form-control" id="genderSelect">
+            <option>Select option</option>
+            <option>Female</option>
+            <option>Male</option>
+            <option>Other</option>
+        </select>
     </div>
 </div>
 
@@ -38,3 +47,7 @@
     </div>
 </div>
 
+<div class="form-group">
+    <label for="biography">Short biography</label>
+    <textarea class="form-control" id="biography" rows="4"></textarea>
+</div>

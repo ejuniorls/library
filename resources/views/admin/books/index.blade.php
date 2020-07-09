@@ -1,6 +1,6 @@
 @extends('admin.mainlayout')
 
-@section('title', '- Books')
+@section('title', 'Books')
 
 @section('content')
 
