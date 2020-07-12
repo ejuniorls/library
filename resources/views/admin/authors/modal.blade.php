@@ -9,8 +9,8 @@
                     <span aria-hidden="true">×</span>
                 </button>
             </div>
-            <div class="modal-body">
-                <form>
+            <div class="modal-body" novalidate="" action="{{ route('admin.authors.save') }}>
+                <form id="frmProducts" name="frmProducts" class="form-horizontal" novalidate="">
                     {{ csrf_field() }}
                     @include('admin.authors._form')
                 </form>
