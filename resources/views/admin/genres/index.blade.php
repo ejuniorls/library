@@ -184,9 +184,9 @@
                                                         <i class="far fa-edit"></i>
                                                     </a>
 
-                                                    <a class="btn btn-sm btn-primary d-none d-xl-inline-block"
-                                                        href="{{ route('admin.genres.delete', $genre->id) }}">
-                                                        <i class="far fa-trash-alt"></i>
+                                                    <a class="btn btn-sm btn-primary d-none d-xl-inline-block" href=""
+                                                        role="button" data-toggle="modal" data-target="#deleteModal"><i
+                                                            class="far fa-trash-alt"></i></a>
                                                     </a>
                                                 </td>
                                             </tr>

@@ -19,10 +19,10 @@ class CreateAuthorsTable extends Migration
             $table->string('lastName');
             $table->string('popularName')->unique();
             $table->date('birth');
-            $table->date('death');
+            $table->date('death')->nullable();
             $table->string('gender', 1);
-            $table->string('image');
-            $table->text('biography');
+            $table->string('photo')->nullable();
+            $table->text('biography')->nullable();
             $table->timestamps();
         });
     }

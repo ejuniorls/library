@@ -20,7 +20,7 @@
             <!-- Basic Card Example -->
             <div class="card shadow mb-4">
                 <div class="card-body">
-                    <form id="author-new" class="needs-validation" novalidate=""
+                    <form id="author-new" class="needs-validation" novalidate
                         action="{{ route('admin.authors.update', $author->id) }}" method="post" enctype="multipart/form-data">
                         {{ csrf_field() }}
                         @include('admin.authors._form')

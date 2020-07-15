@@ -72,3 +72,12 @@
     </div>
 </div>
 <!-- End of Delete Modal -->
+
+<script>
+    $('#deleteModal').on('show.bs.modal', function (event) {
+    var button = $(event.relatedTarget);
+        var id = button.data('id');
+
+    $('#userForm').attr("action", "{{ url('/companies') }}" + "/" + id);
+})
+</script>

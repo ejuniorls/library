@@ -17,11 +17,18 @@
 
         <div class="col-lg-12 order-2">
 
+            @if (request()-> get('error'))
+            <div class="alert alert-warning" role="alert">
+                {{ app('request')->input('error') }}
+            </div>
+            @endif
+
             <!-- Basic Card Example -->
             <div class="card shadow mb-4">
                 <div class="card-body">
-                    <form id="author-new" class="needs-validation" novalidate=""
-                        action="{{ route('admin.authors.save') }}" method="post" enctype="multipart/form-data">
+
+                    <form id="genre-new" class="needs-validation" novalidate action="{{ route('admin.genres.save') }}"
+                        method="post" enctype="multipart/form-data">
                         {{ csrf_field() }}
                         @include('admin.genres._form')
                     </form>
@@ -29,7 +36,7 @@
 
                 <div class="card-footer">
                     <a class="btn btn-light" href="{{ route('admin.genres') }}" role="button">Cancel</a>
-                    <button type="submit" class="btn btn-primary" form="author-new">Save</button>
+                    <button type="submit" class="btn btn-primary" form="genre-new">Save</button>
                 </div>
             </div>
 

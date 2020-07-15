@@ -113,18 +113,18 @@
                                                         <label class="form-check-label" for="defaultCheck1"></label>
                                                     </div>
                                                 </th>
+                                                <th class="sorting" tabindex="0" aria-controls="dataTable" rowspan="1"
+                                                    colspan="1" style="width: 100px;"
+                                                    aria-label="Position: activate to sort column ascending">Popular
+                                                    Name
+                                                </th>
                                                 <th class="sorting " tabindex="0" aria-controls="dataTable" rowspan="1"
                                                     colspan="1" style="width: 60px;"
                                                     aria-label="Position: activate to sort column ascending">First Name
                                                 </th>
                                                 <th class="sorting " tabindex="0" aria-controls="dataTable" rowspan="1"
-                                                    colspan="1" style="width: 60px;"
-                                                    aria-label="Position: activate to sort column ascending">Last Name
-                                                </th>
-                                                <th class="sorting" tabindex="0" aria-controls="dataTable" rowspan="1"
                                                     colspan="1" style="width: 100px;"
-                                                    aria-label="Position: activate to sort column ascending">Popular
-                                                    Name
+                                                    aria-label="Position: activate to sort column ascending">Last Name
                                                 </th>
                                                 <th class="sorting" tabindex="0" aria-controls="dataTable" rowspan="1"
                                                     colspan="1" style="width: 100px;"
@@ -149,9 +149,9 @@
                                                         <label class="form-check-label" for="defaultCheck1"></label>
                                                     </div>
                                                 </th>
+                                                <th rowspan="1" colspan="1">Popular Name</th>
                                                 <th rowspan="1" colspan="1" class="">First Name</th>
                                                 <th rowspan="1" colspan="1" class="">Last Name</th>
-                                                <th rowspan="1" colspan="1">Popular Name</th>
                                                 <th rowspan="1" colspan="1">Birth</th>
                                                 <th rowspan="1" colspan="1">Death</th>
                                                 <th rowspan="1" colspan="1" class="text-center">Actions</th>
@@ -167,9 +167,9 @@
                                                         <label class="form-check-label" for="defaultCheck1"></label>
                                                     </div>
                                                 </td>
+                                                <td class="align-middle">{{ $author->popularName }}</td>
                                                 <td class="align-middle">{{ $author->firstName }}</td>
                                                 <td class="align-middle ">{{ $author->lastName }}</td>
-                                                <td class="align-middle">{{ $author->popularName }}</td>
                                                 <td class="align-middle">{{ $author->birth }}</td>
                                                 <td class="align-middle">{{ $author->death }}</td>
                                                 <td class="text-center align-middle">

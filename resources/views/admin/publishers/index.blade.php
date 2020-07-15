@@ -152,7 +152,9 @@
                                                     </div>
                                                 </td>
                                                 <td class="align-middle">{{ $publisher->publisher }}</td>
-                                                <td class="align-middle">{{ $publisher->logo }}</td>
+                                                <td class="align-middle">
+                                                    <img src="{{ $publisher->logo }}" alt="" srcset="" width="150">
+                                                    </td>
                                                 <td class="text-center align-middle">
                                                     <div class="dropdown show no-arrow d-inline-block">
                                                         <a class="btn btn-sm btn-primary dropdown-toggle no-arrow"

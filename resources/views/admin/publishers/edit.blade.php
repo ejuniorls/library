@@ -17,11 +17,18 @@
 
         <div class="col-lg-12 order-2">
 
+            @if (request()-> get('error'))
+            <div class="alert alert-warning" role="alert">
+                {{ app('request')->input('error') }}
+            </div>
+            @endif
+
             <!-- Basic Card Example -->
             <div class="card shadow mb-4">
                 <div class="card-body">
                     <form id="genres-new" class="needs-validation" novalidate=""
-                        action="{{ route('admin.publishers.update', $publisher->id) }}" method="post" enctype="multipart/form-data">
+                        action="{{ route('admin.publishers.update', $publisher->id) }}" method="post" 
+                        enctype="multipart/form-data">
                         {{ csrf_field() }}
                         @include('admin.publishers._form')
                         <input type="hidden" name="_method" value="put">
